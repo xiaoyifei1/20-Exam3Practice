@@ -415,6 +415,7 @@ def practice_problem4d(sequence):
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 minutes.
+    
     ###########################################################################
     total = 0
     for k in range(len(sequence) - 1):
