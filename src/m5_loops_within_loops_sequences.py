@@ -217,6 +217,11 @@ def big_letters(sequence_of_sequences):
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:  12 minutes.
+    #for k in range (len(seq_of_seq)):
+        #for j in range (len(seq_of_seq[k])):
+            #if is_prime(seq_of_seq[k][j])==True and seq_of_seq[k][j]>n:
+                #return seq_of_seq[k][j]
+    #return -1
     # -------------------------------------------------------------------------
     capitals = ''
     for k in range(len(sequence_of_sequences)):

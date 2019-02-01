@@ -6,8 +6,8 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Yifei Xiao.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -87,8 +87,35 @@ def shape(r):
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:  15 minutes.
-    # -------------------------------------------------------------------------
+    #list=[]
+    #for k in range (len(seq_of_seq)):
+        #if len(seq_of_seq[k])!=0:
+            #max = seq_of_seq[k][0]
+            #for j in range (len(seq_of_seq[k])):
 
+
+                #if max<seq_of_seq[k][j]:
+                    #max=seq_of_seq[k][j]
+
+            #list.append(max)
+    #return list
+    # -------------------------------------------------------------------------
+    for k in range(r):
+        # Spaces
+        for j in range(k):
+            print(' ', end='')
+        # Pluses
+        for l in range(r - k):
+            print('+', end='')
+        # Exclamation
+        print('!', end='')
+        # Numbers
+        for i in range(r - k):
+            print(r - i, end='')
+        # Dashes
+        for p in range(k):
+            print('-', end='')
+        print()
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.

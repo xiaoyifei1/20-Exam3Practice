@@ -6,8 +6,8 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Yifei Xiao.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -102,7 +102,38 @@ def hourglass(window, n, point, radius, color):
     #    DIFFICULTY:      8
     #    TIME ESTIMATE:  25 minutes (warning: this problem is challenging)
     # -------------------------------------------------------------------------
+    xc = point.x
+    yc = point.y
 
+    xc_start = xc
+    original_xc_start = xc_start
+    original_yc = yc
+
+    up_down = 1
+
+    for k in range(n * 2):
+        if k == n:
+            up_down = -1
+            xc_start = original_xc_start
+            yc = original_yc
+            xc = xc_start
+        if up_down == 1:
+            cols = k + 1
+        else:
+            cols = k + 1 - n
+        for j in range(cols):
+            circle = rg.Circle(rg.Point(xc, yc), radius)
+            circle.fill_color = color
+            circle.attach_to(window)
+            line = rg.Line(rg.Point(xc - radius, yc), rg.Point(xc + radius, yc))
+            line.attach_to(window)
+
+            xc += 2 * radius
+
+        yc -= up_down * radius * (3 ** 0.5)
+        xc_start -= radius
+        xc = xc_start
+    window.render()
 
 def run_test_many_hourglasses():
     """ Tests the    many_hourglasses    function. """
@@ -180,7 +211,22 @@ def many_hourglasses(window, square, m, colors):
     #                         a correct "hourglass" function above)
     #    TIME ESTIMATE:  20 minutes (warning: this problem is challenging)
     # -------------------------------------------------------------------------
+    point = square.center
+    radius = square.length_of_each_side / 2
+    t = 0
 
+    for k in range(m):
+        hourglass(window, k + 1, point, radius, colors[t])
+        t += 1
+        if t >= len(colors):
+            t = 0
+        rect = rg.Rectangle(rg.Point(point.x - radius * (k + 1), point.y - radius * (k * 3 ** 0.5 + 1)),
+                            rg.Point(point.x + radius * (k + 1), point.y + radius * (k * 3 ** 0.5 + 1)))
+        rect.attach_to(window)
+
+        point.x += (2 * k + 3) * radius
+
+    window.render()
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
