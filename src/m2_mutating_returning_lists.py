@@ -119,7 +119,18 @@ def doubler(list1, list2):
         list2_ans += [list2[j] * 2]
     return list2_ans
 
+    #Fn2=0
+    #Fn1=1
+    #Fn=0
+    #while True:
+        #if Fn>=n-Fn2:
+            #break
+        #Fn=Fn1+Fn2
+        #Fn2=Fn1
+        #Fn1=Fn
 
+
+    #return Fn
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
