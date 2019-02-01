@@ -6,8 +6,8 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Yifei Xiao.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -142,7 +142,11 @@ def practice_problem4a(sequence):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 minutes.
     ###########################################################################
-
+    indices = []
+    for k in range(len(sequence) - 1):
+        if sequence[k] == sequence[k + 1]:
+            indices += [k]
+    return indices
 
 def run_test_practice_problem4b():
     """ Tests the    practice_problem4b    function. """
@@ -205,7 +209,13 @@ def practice_problem4b(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes.
     ###########################################################################
+    max_k = 0
 
+    for k in range(0, len(sequence), 2):
+        if sequence[k] > sequence[max_k]:
+            max_k = k
+
+    return sequence[max_k]
 
 def run_test_practice_problem4c():
     """ Tests the    practice_problem4c    function. """
@@ -307,6 +317,13 @@ def practice_problem4c(points):
     #    DIFFICULTY:      9
     #    TIME ESTIMATE:   15 minutes.
     ###########################################################################
+    for k in range(len(points)):
+        if is_prime(points[k].x) and is_prime(points[k].y):
+            hold = points[k].x
+            points[k].x = points[k].y
+            points[k].y = hold
+            return points[k]
+    return 'Not found'
 
 
 def run_test_practice_problem4d():
@@ -399,7 +416,11 @@ def practice_problem4d(sequence):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 minutes.
     ###########################################################################
-
+    total = 0
+    for k in range(len(sequence) - 1):
+        if is_prime(sequence[k]) and is_prime(sequence[k + 1]) and sequence[k] != sequence[k + 1]:
+            total += sequence[k]
+    return total
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.

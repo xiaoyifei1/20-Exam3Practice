@@ -216,6 +216,14 @@ def practice_problem3(start, n, threshold):
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   < 15 minutes.
+    #for k in range (n):
+        #for j in range (n-k):
+            #print(k+1,end='')
+        #print('*',end='')
+        #for h in range (1,k+1) :
+            #print(h,end='')
+        #print()
+
     ###########################################################################
     returned_list = []
     ind = start
